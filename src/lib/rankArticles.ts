@@ -13,6 +13,7 @@ const SOURCE_MULTIPLIERS: Record<NewsArticle["sourceType"], number> = {
   rss: 3.0,    // 80 authority  × 3.0 = 240  (ensures visibility)
   newsapi: 2.0,    // 65 base       × 2.0 = 130  (moderate presence)
   devto: 1.2,    // dev.to reactions are typically 50–500
+  youtube: 3.0,    // No real engagement data from Atom feeds — use authority proxy
 };
 
 export const RSS_AUTHORITY_SCORES: Record<string, number> = {
