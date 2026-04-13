@@ -1,4 +1,4 @@
-import { ArrowUp, MessageSquare, Heart, CirclePlay, AtSign } from "lucide-react";
+import { ArrowUp, MessageSquare, Heart, CirclePlay } from "lucide-react";
 import type { NewsArticle } from "@/lib/types";
 
 interface EngagementBarProps {
@@ -17,23 +17,6 @@ export default function EngagementBar({ upvotes, comments, sourceType, source }:
   //     <div className="flex items-center gap-1.5 mt-3 pt-3 border-t border-[var(--border)] text-xs text-[var(--muted)]">
   //       <CirclePlay size={13} strokeWidth={1.5} />
   //       <span className="truncate max-w-[160px]">{source}</span>
-  //     </div>
-  //   );
-  // }
-
-  // // ── Twitter / X posts ─────────────────────────────────────────────
-  // if (sourceType === "twitter") {
-  //   return (
-  //     <div className="flex items-center gap-2 mt-3 pt-3 border-t border-[var(--border)] text-xs">
-  //       <span className="flex items-center gap-1 text-[var(--foreground)]">
-  //         <AtSign size={13} strokeWidth={1.5} />
-  //         <span className="font-medium">{source}</span>
-  //       </span>
-  //       {upvotes > 0 && (
-  //         <span className="text-[var(--muted)]">
-  //           <Heart size={12} className="inline mr-1" strokeWidth={2} />{fmt(upvotes)}
-  //         </span>
-  //       )}
   //     </div>
   //   );
   // }

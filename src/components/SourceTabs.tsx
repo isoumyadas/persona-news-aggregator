@@ -29,12 +29,6 @@ const TECH_SOURCES: SourceTab[] = [
     emoji:       "🔴",
     description: "Top 10 most recent videos from 14 SWE / AI / ML channels",
   },
-  {
-    value:       "twitter",
-    label:       "X / Twitter",
-    emoji:       "⬛",
-    description: "Top 15 posts from 31 leading tech accounts — ranked by engagement",
-  },
 ];
 
 export default function SourceTabs({ basePath }: { basePath: string }) {

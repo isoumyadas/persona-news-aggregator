@@ -17,7 +17,10 @@ export async function fetchRssFeed(
   maxItems = 5
 ): Promise<Omit<NewsArticle, "engagementScore">[]> {
   try {
-    const result = await parser.parseURL(feed.url);
+    const response = await fetch(feed.url, { next: { revalidate: 3600 } });
+    if (!response.ok) return [];
+    const xml = await response.text();
+    const result = await parser.parseString(xml);
     return result.items.slice(0, maxItems).map(
       (item): Omit<NewsArticle, "engagementScore"> => ({
         id:           item.link ?? item.guid ?? `rss-${Math.random()}`,

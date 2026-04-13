@@ -18,7 +18,10 @@ function getTodayIST7AM(): string {
 
 async function _fetchTechCrunchTop10(): Promise<FetchResult<NewsArticle>> {
   try {
-    const feed = await parser.parseURL("https://techcrunch.com/feed/");
+    const response = await fetch("https://techcrunch.com/feed/", { next: { revalidate: 3600 } });
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const xml = await response.text();
+    const feed = await parser.parseString(xml);
 
     const articles: NewsArticle[] = feed.items
       .slice(0, 50)
