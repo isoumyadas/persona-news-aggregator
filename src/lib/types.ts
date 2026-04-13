@@ -12,7 +12,7 @@ export interface NewsArticle {
   commentCount: number;
   engagementScore: number;
 
-  sourceType: "hackernews" | "reddit" | "rss" | "newsapi" | "devto";
+  sourceType: "hackernews" | "reddit" | "rss" | "newsapi" | "devto" | "youtube";
 
   subreddit?: string;
   hnId?: number;
